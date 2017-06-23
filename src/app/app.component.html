@@ -1,3 +1,25 @@
-<h1>
-  {{title}}
-</h1>
+
+<div class="row  columns" id="header">
+  <div class="small-9 columns align-self-middle" id="com-u">{{ '{' }} Com-U Chat App {{ '}' }}</div>
+  <div class="columns align-self-middle" id="button-wrapper" *ngIf="!isLoading">
+    <button class="hollow button success" (click)="signIn()" *ngIf="!(user)">
+      <i class="fi-key"></i>&nbsp;&nbsp;Sign In With Google
+    </button>
+    <button class="hollow button alert" (click)="signOut()" *ngIf="(user)">
+      <i class="fi-power"></i>&nbsp;&nbsp;Sign Out
+    </button>
+  </div>
+</div>
+
+<div class="row columns">
+
+  <div class="columns">
+    <input type="text" id="message" *ngIf="user" [disabled]="isLoading" placeholder="Chat here..." (keyup.enter)="sendChat($event.target.value)" [(ngModel)]="msgVal" />
+
+    <div class="chat-container" *ngFor="let item of items | async">
+      <a href="#"><i class="fi-torso"></i> {{item.name}} &bull; <i class="fi-clock"></i> {{ item.createdAt | date: 'MM-d-yyyy hh:mm:ss a'}}</a>
+      <p>{{item.message}}</p>
+    </div>
+  </div>
+
+</div>
