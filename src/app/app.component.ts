@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
@@ -13,32 +12,19 @@ import { AngularFireAuth } from 'angularfire2/auth';
 export class AppComponent {
 
   user: firebase.User;
-  items: FirebaseListObservable<any>;
-  name: any;
+  items: any = [];
   msgVal: string = '';
-  isLoading: boolean = true;
 
-  constructor(public af: AngularFireDatabase, public afAuth: AngularFireAuth) {
-
-    this.items = af.list('/messages', {
-      query: {
-        limitToLast: 5
-      }
-    });
-
-    afAuth.authState.subscribe((user: firebase.User) => {
-      this.user = (!user ? null : user);
-      this.isLoading = false;
-    });
+  constructor() {
 
   }
 
-  signIn() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  signInWithGoogle() {
+    // Code to sign in
   }
 
   signOut() {
-    this.afAuth.auth.signOut();
+    // Code to sign out
   }
 
   sendChat(inputMessage: string) {
@@ -49,11 +35,9 @@ export class AppComponent {
       return;
     }
 
-    // Push | Save message to Firebase DB
     this.items.push({
       message: inputMessage,
-      name: this.user.displayName,
-      likes: 0,
+      name: 'Guest',
       createdAt: (new Date).toString()
     });
 

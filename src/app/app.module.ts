@@ -14,8 +14,7 @@ import { AngularFireModule } from 'angularfire2';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
-    AngularFireModule.initializeApp(Config.firebaseConfig)
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -40,7 +40,7 @@ input#message {
    width:100%;
 }
 
-.chat-container a {
+.chat-container span {
    text-transform: uppercase;
    font-weight:300;
    color: #009688;
