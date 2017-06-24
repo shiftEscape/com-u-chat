@@ -40,18 +40,6 @@ input#message {
    width:100%;
 }
 
-/*.chat-container:nth-of-type(3) {
-   opacity: .8;
-}
-
-.chat-container:nth-of-type(2) {
-   opacity: .6;
-}
-
-.chat-container:nth-of-type(1) {
-   opacity: .4;
-}*/
-
 .chat-container a {
    text-transform: uppercase;
    font-weight:300;
