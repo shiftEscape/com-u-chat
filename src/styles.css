@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background:#242226;
-    padding-top: 5em;
+    /*background:#242226;*/
+    background: #FFF;
+    padding-top: 3em;
+    border-top: 8px solid #d8d8d8;
 }
 
 * {

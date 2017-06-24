@@ -1,10 +1,10 @@
 input#message {
    background:none;
    border:none;
-   border-bottom: 1px solid #4C4C4C;
+   border-bottom: 1px solid #DDDDDD;
    outline:none;
    box-shadow:none;
-   color: white;
+   color: #717171;
    font-size:1.6em;
    font-weight:300;
    margin-bottom: 1em;
@@ -24,9 +24,15 @@ input#message {
 }
 
 #com-u {
-   color: #00E676;
-   font-size:2em;
+   background: #2196F3;
+   font-size: 1.3em;
    line-height: 1;
+   color: #FFF;
+   padding: 11px 20px;
+   font-weight: bold;
+   border-right: 5px solid #0082ea;
+   display: inline-block;
+   border-left: 5px solid #0082ea;
 }
 
 .chat-container {
@@ -34,7 +40,7 @@ input#message {
    width:100%;
 }
 
-.chat-container:nth-of-type(3) {
+/*.chat-container:nth-of-type(3) {
    opacity: .8;
 }
 
@@ -44,19 +50,29 @@ input#message {
 
 .chat-container:nth-of-type(1) {
    opacity: .4;
-}
+}*/
 
 .chat-container a {
    text-transform: uppercase;
    font-weight:300;
-   color: #90A4AE;
+   color: #009688;
    font-size:.8em;
    letter-spacing:2px;
 }
 
 .chat-container p {
-   background:#323035;
+   background:#009688;
    padding:10px;
    color:white;
    margin: 5px 0 10px 0;
+   border-left: 5px solid #00796e;
+}
+
+#no-messages {
+   font-size: 1.3em;
+   color: #009688;
+}
+
+#tagline {
+   font-size: 0.7em;
 }
