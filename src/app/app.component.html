@@ -1,13 +1,13 @@
 
-<div class="row  columns" id="header">
-  <div class="small-9 columns align-self-middle">
-    <div id="com-u">Com-U &nbsp;|&nbsp;  <span id="tagline">Your Simple Chat App</span></div>
+<div class="row columns" id="header">
+  <div class="small-5 columns align-self-middle">
+    <div id="com-u">Com U Chat App</div>
   </div>
-  <div class="columns align-self-middle" id="button-wrapper" *ngIf="!isLoading">
-    <button class="button primary" (click)="signIn()" *ngIf="!(user)">
+  <div class="columns align-self-middle" id="button-wrapper">
+    <button class="button primary">
       <i class="fi-key"></i>&nbsp;&nbsp;Sign In With Google
     </button>
-    <button class="button alert" (click)="signOut()" *ngIf="(user)">
+    <button class="button alert">
       <i class="fi-power"></i>&nbsp;&nbsp;Sign Out
     </button>
   </div>
@@ -16,14 +16,12 @@
 <div class="row columns">
 
   <div class="columns">
-    <input type="text" id="message" *ngIf="user" [disabled]="isLoading" placeholder="Chat here..." (keyup.enter)="sendChat($event.target.value)" [(ngModel)]="msgVal" />
+    <input type="text" id="message" placeholder="Chat here..." (keyup.enter)="sendChat($event.target.value)" [(ngModel)]="msgVal" />
 
-    <div class="chat-container" *ngFor="let item of items | async">
+    <div class="chat-container" *ngFor="let item of items">
       <a href="#"><i class="fi-torso"></i> {{item.name}} &bull; <i class="fi-clock"></i> {{ item.createdAt | date: 'MM-d-yyyy hh:mm:ss a'}}</a>
       <p>{{item.message}}</p>
     </div>
-
-    <div id="no-messages" *ngIf="!(items | async)"><i class="fi-refresh"></i> Loading Chat Messages ...</div>
 
   </div>
 

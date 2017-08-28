@@ -1,10 +1,10 @@
 export class Config {
 	static firebaseConfig = {
-      apiKey: "AIzaSyDSpQXNQM-d0munpMIaoWSzaienyrdNX34",
-      authDomain: "comu-chat-app.firebaseapp.com",
-      databaseURL: "https://comu-chat-app.firebaseio.com",
-      projectId: "comu-chat-app",
-      storageBucket: "comu-chat-app.appspot.com",
-      messagingSenderId: "61444099494"
+        apiKey: "AIzaSyALyFB-brsT_iOi_sis9KglIKWNPFyivD8",
+        authDomain: "com-u-chat-app.firebaseapp.com",
+        databaseURL: "https://com-u-chat-app.firebaseio.com",
+        projectId: "com-u-chat-app",
+        storageBucket: "",
+        messagingSenderId: "906275571167"
 	}
 }

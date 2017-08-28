@@ -12,33 +12,23 @@ import { AngularFireAuth } from 'angularfire2/auth';
 })
 export class AppComponent {
 
-  user: firebase.User;
-  items: FirebaseListObservable<any>;
+  user: any;
+  items:any = [];
   name: any;
   msgVal: string = '';
   isLoading: boolean = true;
 
   constructor(public af: AngularFireDatabase, public afAuth: AngularFireAuth) {
 
-    this.items = af.list('/messages', {
-      query: {
-        limitToLast: 5
-      }
-    });
-
-    afAuth.authState.subscribe((user: firebase.User) => {
-      this.user = (!user ? null : user);
-      this.isLoading = false;
-    });
 
   }
 
   signIn() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    // Code to sign in here
   }
 
   signOut() {
-    this.afAuth.auth.signOut();
+    // Code to sign out here
   }
 
   sendChat(inputMessage: string) {
@@ -52,8 +42,7 @@ export class AppComponent {
     // Push | Save message to Firebase DB
     this.items.push({
       message: inputMessage,
-      name: this.user.displayName,
-      likes: 0,
+      name: 'Guest',
       createdAt: (new Date).toString()
     });
 
